@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking 預訂 | 巴希雅海灣重慶燒烤</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content 跳到主要內容</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-zh">巴希雅海灣重慶燒烤</span>
+        <span class="logo-en">Bahia Chung King BBQ</span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home 首頁</a>
+        <a href="pricing.html">Pricing 收費</a>
+        <a href="booking.html" class="active">Booking 預訂</a>
+        <a href="contact.html">Contact 聯絡</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Online Booking 網上預訂</p>
+        <h1>Book your BBQ visit 預訂燒烤到訪</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container booking-layout">
+        <form id="booking-form" class="booking-form" novalidate>
+          <fieldset>
+            <legend>Visit details 到訪資料</legend>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="visit-date">Visit date 到訪日期 <span class="required">*</span></label>
+                <input type="date" id="visit-date" name="visitDate" required>
+                <span class="error-msg" id="visit-date-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="visit-time">Preferred time 時段 <span class="required">*</span></label>
+                <select id="visit-time" name="visitTime" required>
+                  <option value="">Select 請選擇</option>
+                  <option value="12:00">12:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="18:00">18:00</option>
+                  <option value="20:00">20:00</option>
+                </select>
+                <span class="error-msg" id="visit-time-error"></span>
+                <div class="time-slot-section" aria-label="Available time slots 可預訂時段">
+                  <p class="form-hint">Availability / Time Slot Selection 可預訂時段</p>
+                  <div class="time-slot-grid">
+                    <button type="button" class="time-slot-btn" data-time="12:00">12:00<br><span>Available 可預訂</span></button>
+                    <button type="button" class="time-slot-btn" data-time="14:00">14:00<br><span>Available 可預訂</span></button>
+                    <button type="button" class="time-slot-btn" data-time="16:00">16:00<br><span>Few left 少量名額</span></button>
+                    <button type="button" class="time-slot-btn" data-time="18:00">18:00<br><span>Popular 熱門</span></button>
+                    <button type="button" class="time-slot-btn" data-time="20:00">20:00<br><span>Available 可預訂</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="day-type">Day type 日子類型 <span class="required">*</span></label>
+                <select id="day-type" name="dayType" required>
+                  <option value="">Select 請選擇</option>
+                  <option value="weekday">Mon–Fri 平日</option>
+                  <option value="weekend">Sat, Sun &amp; PH 假期</option>
+                </select>
+                <span class="error-msg" id="day-type-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="duration">Duration 用餐時長 <span class="required">*</span></label>
+                <select id="duration" name="duration" required>
+                  <option value="">Select 請選擇</option>
+                  <option value="1">1 hour 1小時</option>
+                  <option value="2">2 hours 2小時</option>
+                  <option value="3">3 hours 3小時</option>
+                </select>
+                <span class="error-msg" id="duration-error"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Party size 人數</legend>
+
+            <div class="form-row form-row-3">
+              <div class="form-group">
+                <label for="adults">Adults 成人</label>
+                <input type="number" id="adults" name="adults" min="0" max="50" value="2">
+              </div>
+              <div class="form-group">
+                <label for="seniors">Seniors 長者</label>
+                <input type="number" id="seniors" name="seniors" min="0" max="50" value="0">
+              </div>
+              <div class="form-group">
+                <label for="children">Children 小童 (3–11)</label>
+                <input type="number" id="children" name="children" min="0" max="50" value="0">
+              </div>
+            </div>
+            <p class="form-hint">Groups of 30+ — tick below for a custom quote. 30人以上團體請勾選以申請報價。</p>
+            <label class="checkbox-label">
+              <input type="checkbox" id="large-group" name="largeGroup">
+              Request group quote (30+ guests) 團體報價
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Contact 聯絡資料</legend>
+
+            <div class="form-group">
+              <label for="name">Full name 姓名 <span class="required">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+              <span class="error-msg" id="name-error"></span>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone 電話 <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="e.g. 91234567" autocomplete="tel">
+                <span class="error-msg" id="phone-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email 電郵</label>
+                <input type="email" id="email" name="email" autocomplete="email">
+                <span class="error-msg" id="email-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="notes">Special requests 備註</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Birthday, vegetarian needs, parking, etc. / 生日、素食、泊車等需要"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Submit booking 提交預訂</button>
+            <button type="reset" class="btn btn-secondary">Clear 清除</button>
+          </div>
+
+          <div id="form-success" class="form-success" hidden role="status">
+            <strong>Booking request received 已收到預訂申請</strong>
+            <p>This is a prototype — no data is sent to a server. In production, the restaurant would confirm by phone.
+            這是原型示範，資料不會傳送到伺服器；正式版本會由餐廳致電確認。</p>
+          </div>
+        </form>
+
+        <aside class="booking-summary" aria-live="polite">
+          <h2>Estimated total 預估費用</h2>
+          <p class="summary-note">Updates as you change party size and duration.
+          人數及用餐時長變更時會即時更新。</p>
+          <dl class="summary-list">
+            <div><dt>Guests 人數</dt><dd id="summary-guests">2</dd></div>
+            <div><dt>Grill fees 開爐費</dt><dd id="summary-grills">$50</dd></div>
+            <div><dt>Food total 餐費</dt><dd id="summary-food">—</dd></div>
+            <div class="summary-total"><dt>Estimated total 總計</dt><dd id="summary-total">—</dd></div>
+          </dl>
+          <p class="summary-disclaimer">Estimate only. Final price confirmed by restaurant. 僅供參考，以商戶確認為準。</p>
+
+          <div class="faq-mini">
+            <h3>How to book 預訂指引</h3>
+            <ol>
+              <li>Choose date, time, and duration 選擇日期、時間及用餐時長</li>
+              <li>Enter accurate party size 輸入正確人數</li>
+              <li>Submit — we call to confirm within 24 hours 提交後24小時內致電確認</li>
+            </ol>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>巴希雅海灣重慶燒烤</strong>
+        <p>Bahia Chung King BBQ · Tai Mei Tuk, Tai Po<br>巴希雅海灣重慶燒烤 · 大埔大美督</p>
+      </div>
+      <div>
+        <p>Tel: <a href="tel:+85226626869">2662 6869</a> · <a href="tel:+85269934082">6993 4082</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="booking.html" class="mobile-sticky-booking">Book now 立即預訂</a>
+  <script src="script.js"></script>
+</body>
+</html>
